@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import roleRoutes from './routes/roleRoutes.js';
 import permissionRoutes from './routes/permissionRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -14,5 +15,7 @@ app.use(express.json());
 app.use('/api/roles', roleRoutes);
 
 app.use('/api/permissions', permissionRoutes);
+app.use('/api/users', userRoutes);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
